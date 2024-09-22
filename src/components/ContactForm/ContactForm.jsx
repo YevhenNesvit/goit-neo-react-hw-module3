@@ -1,25 +1,25 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
-import styles from './ContactForm.module.css';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { nanoid } from "nanoid";
+import styles from "./ContactForm.module.css";
 
 const ContactForm = ({ setContacts }) => {
-  const initialValues = { name: '', number: '' };
+  const initialValues = { name: "", number: "" };
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .min(3, 'Minimum 3 characters')
-      .max(50, 'Maximum 50 characters')
-      .required('Required'),
+      .min(3, "Minimum 3 characters")
+      .max(50, "Maximum 50 characters")
+      .required("Required"),
     number: Yup.string()
-      .min(3, 'Minimum 3 characters')
-      .max(50, 'Maximum 50 characters')
-      .required('Required'),
+      .min(3, "Minimum 3 characters")
+      .max(50, "Maximum 50 characters")
+      .required("Required"),
   });
 
   const handleSubmit = (values, { resetForm }) => {
     const newContact = { id: nanoid(), ...values };
-    setContacts(prevContacts => [...prevContacts, newContact]);
+    setContacts((prevContacts) => [...prevContacts, newContact]);
     resetForm();
   };
 
@@ -49,4 +49,3 @@ const ContactForm = ({ setContacts }) => {
 };
 
 export default ContactForm;
-
