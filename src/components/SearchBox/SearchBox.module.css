@@ -1,0 +1,16 @@
+.searchBox {
+  margin-bottom: 20px; /* Відступ між пошуком і контактами */
+}
+
+.searchBox label {
+  margin-bottom: 5px; /* Відступ між надписом і полем вводу */
+  font-weight: bold;
+  display: block; /* Щоб label зайняв всю ширину */
+}
+
+.searchBox input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 94%; /* Щоб поле вводу займало всю ширину */
+}
